@@ -1,8 +1,8 @@
 class Solution:
     # n friends are playing a game where they pass a ball to each other. each round,
     # they pass the ball roundNum*k indices to the right. this function calculates
-    # which friends lost the game. the winners get the ball, and the game ends when
-    # one friend gets the ball twice
+    # which friends lost the game and returns a list of them in ascending order.
+    # the winners get the ball, and the game ends when one friend gets the ball twice
     def circularGameLosers(self, n: int, k: int) -> List[int]:
         # define the list of friends with a range function. n+1 is due to range()
         # being uninclusive in Python
