@@ -14,12 +14,11 @@ class Solution:
         # define who gets the first ball, starting at index 0
         ballIndex = 0
         
-        
         # iterate until a friend gets the ball twice. the only way is to loop forever
         # and then break the loop when a friend gets the ball
         while True:
             # calculate where the ball is going to go next
-            ballIndex = (ballIndex + roundNum * k) % n
+            ballIndex = (ballIndex + (roundNum * k)) % n
             
             # if the index there is already 0, break the loop because that friend
             # has already gotten the ball once
