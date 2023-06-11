@@ -4,9 +4,7 @@ class Solution:
     # checking the lexicographical value of the current letter.
     # Returns the palindrome string.
     def makeSmallestPalindrome(self, s: str) -> str:
-        # turn the string into a list for easier manipulation. This allows
-        # for changing the string's indices directly and I believe it is more
-        # memory efficient.
+        # turn the string into a list, which allows for changing the letters
         s = list(s)
         
         # iterate through the string starting from 0 and ending at half the length (rounded down)
@@ -16,7 +14,7 @@ class Solution:
             # get the letter at i
             letter = s[i]
             
-            # if it's not the same as the letter at -i, then compare ords
+            # if it's not the same as the letter at -i-1, then compare ords
             # the letter with the greater ord becomes the letter with the smaller ord
             # however, to compare ords you can just see if the letter is greater or
             # less than the other
@@ -25,7 +23,7 @@ class Solution:
             elif letter < s[-i-1]:
                 s[-i-1] = s[i]
         
-        # return the new string in string form
+        # return the new string in string form. (note: could've used join operator)
         result = ""
         for e in s:
             result += e
