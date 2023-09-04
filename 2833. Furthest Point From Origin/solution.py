@@ -1,4 +1,7 @@
 class Solution:
+    # Takes in a string of commands: L (left), R (right), or _ (either left or right).
+    # Find the furthest distance from the origin you can go if you replace each _ with
+    # either a left or a right.
     def furthestDistanceFromOrigin(self, moves: str) -> int:
         # number of _ moves
         numUnknownMoves = 0
@@ -8,11 +11,11 @@ class Solution:
         for command in moves:
             # use match-case statement to check for each command
             match command:
-                # case R: increment
+                # case R: move to the right on a number line
                 case "R":
                     currentPos += 1
                 
-                # case L: decrement
+                # case L: move to the left on a number line
                 case "L":
                     currentPos -= 1
             
@@ -20,11 +23,4 @@ class Solution:
                 case "_":
                     numUnknownMoves += 1
         
-        # check sign of current position
-        if abs(currentPos) == currentPos:
-            currentPos += numUnknownMoves
-        else:
-            currentPos -= numUnknownMoves
-        
-        # return absolute value of current position
-        return abs(currentPos)
+        return abs(currentPos) + numUnknownMoves
